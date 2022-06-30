@@ -10,12 +10,12 @@ const Dummyitems=[
    {id: "e2" ,title:"PC",amount: 300  ,date:new Date(2020,2,24)}
 ];
 
-function App(){
+function App(){   //the App manage expenses by title ,price and date 
 
    const[expenses,setExpenses]=useState(Dummyitems);
    
 
-
+// the function get an object of new expense (uplifted state) and update the expenses array 
    const addNewExpense=(newExpense)=>{
       const {id,title,amount,date}=newExpense;
       const newExpenses= [...expenses];
@@ -31,8 +31,12 @@ return(
 <div>
 <h1>Lets get Started!</h1>
 
+{/* 
+UI for Adding new Expense */}
 <NewExpense AddingToApp={addNewExpense}/>
 
+
+{/* Displaying the List of expenses */}
 <Expenses items={expenses} />
  
 </div>

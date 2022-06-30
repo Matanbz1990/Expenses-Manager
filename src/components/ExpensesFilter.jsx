@@ -4,6 +4,7 @@ import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
 
+  //send the select year upward
 const SelectedYear=(event)=>{
   props.selectedYearData(event.target.value)
 

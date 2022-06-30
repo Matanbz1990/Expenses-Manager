@@ -1,18 +1,34 @@
 import FormExpense from './FormExpense';
 import "./NewExpense.css";
+import {useState} from "react";
 
 const NewExpense=(props)=>{
 
+    const[EditingForm,setEditingForm]=useState(false);
+
+
+    const EditForm=()=>{
+        setEditingForm(true);
+    }
+
+    const CancelEdit=()=>{
+        setEditingForm(false);
+    }
+
+
+
 const AddExpense=(newExpense)=>{
 const expenseData={...newExpense}
+props.AddingToApp(expenseData);}
 
-props.AddingToApp(expenseData);
-
-}
+       
 
     return(
         <div  className="new-expense">
-            <FormExpense onAddExpense={AddExpense} />
+        {EditingForm===false && <button onClick={EditForm}>Add New Expense</button>}
+        {EditingForm===true && <FormExpense Cancel={CancelEdit} onAddExpense={AddExpense} />}
+       
+                    
         </div>
     )
 }

@@ -7,7 +7,6 @@ function ExpenseDate(props){
 
 const month =props.expenseDate.toLocaleString("en-US", { month: "long" });;
 
-
 const day=props.expenseDate.toLocaleString("en-US", { day: "2-digit" });;
 
 const year=props.expenseDate.getFullYear();
@@ -24,13 +23,5 @@ const year=props.expenseDate.getFullYear();
 }
 export default ExpenseDate;
 
-
-{/* 
-     <div><h2>{month} </h2></div>
-     <div><h2>{day}</h2> </div>
-     <div><h2>{year}</h2> </div>
-
-
-       */}
 
 

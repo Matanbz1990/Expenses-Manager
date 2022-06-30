@@ -6,28 +6,24 @@ const FormExpense=(props)=>{
 
 const [enteredValue,setEnteredValue]=useState({id:Math.random(),title:"",amount:"",date:""});
 
-
+  //handle the changes on inputs
+  
     const changeHandler=(event)=>{
         const value=event.target.value;
         const name=event.target.name;
-
-
         setEnteredValue((prevValues)=>{
-
-           return({...prevValues,[name]:value})
-           
-        })
-       
-      
-        
-        
+           return({...prevValues,[name]:value})      
+        })    
     }
 
+    //send the new expense(state) uplift 
     const addNewExpense=(event)=>{
         event.preventDefault();
        props.onAddExpense(enteredValue);
         setEnteredValue({id:Math.random() ,title:"",amount:"",date:""});
     }
+
+ 
     
 
     return(
@@ -49,7 +45,9 @@ const [enteredValue,setEnteredValue]=useState({id:Math.random(),title:"",amount:
            
             <div className="new-expense__action">
             <button  type="submit">Add Expense</button>
+            <button  onClick={props.Cancel}>Cancel</button>
             </div>
+           
        
 
         </div>
