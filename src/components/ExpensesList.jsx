@@ -1,29 +1,29 @@
 import ExpenseItem  from "./ExpenseItem";
-import ExpensesFilter from "./ExpensesFilter";
-import {useState} from "react";
+import "./ExpensesList.css";
+
 
  const ExpensesList=(props)=>{
 
-    const [expensesYear,setExpensesYear]=useState("");
+  const filteredYear=props.FilteredYear;
 
-    //recieved chosen year from ExpensesFilter component
-    const selectedExpensesYear=(year)=>{
-        setExpensesYear(year);
-    }
 
-    //for getting array of expenses with the chosen year
-
-    const filteredYear=props.items.filter(expense=>{
-    return (expense.date.getFullYear().toString()===expensesYear)
-        })
+  const DisplayingNoExpenses=()=>{
+ 
+}
 
     return(
 
-        <div className="Expenses">
-        <ExpensesFilter selectedYearData={selectedExpensesYear}/>
-       
-        {filteredYear.length===0 && <p>No expense found!</p>}
-     
+        <div >
+      {/* {console.log(props.ExpensesYear)}; */}
+
+
+{/* why its not working with the function? */}
+
+     {(props.ExpensesYear!=null)&&(filteredYear.length===0 && props.ExpensesYear!="Choose a year") && <h3>No expenses found this year!</h3>};
+
+ 
+
+    
         {filteredYear.map((expense)=>{
          return(
            <ExpenseItem key ={expense.id}

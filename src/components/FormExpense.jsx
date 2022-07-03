@@ -31,11 +31,11 @@ const [enteredValue,setEnteredValue]=useState({id:Math.random(),title:"",amount:
         <div className="FormContainer" >
        
             <div className="new-expense__control">
-                <label>Title</label>
+                <label>Product</label>
                 <input onChange={changeHandler} type="text" name="title" value={enteredValue.title}/>
             </div>
             <div className="new-expense__control">
-            <label>Price</label>
+            <label>Price ($)</label>
             <input onChange={changeHandler} type='number' min="0.01" step="0.01" name="amount" value={enteredValue.amount} />
             </div>
             <div className="new-expense__control">

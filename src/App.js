@@ -2,12 +2,16 @@
 import React ,{useState} from 'react';
 import Expenses from "./components/Expenses";
 import NewExpense from './components/NewExpense';
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 
 const Dummyitems=[
    {id: "e1",title:"Car insurane",amount: 200  ,date:new Date(2022,5,22)},
-   {id: "e2" ,title:"PC",amount: 300  ,date:new Date(2020,2,24)}
+   {id: "e2" ,title:"PC",amount: 300  ,date:new Date(2020,2,24)},
+   {id: "e3" ,title:"TV",amount: 300  ,date:new Date(2021,3,7)},
 ];
 
 function App(){   //the App manage expenses by title ,price and date 
@@ -29,7 +33,7 @@ function App(){   //the App manage expenses by title ,price and date
   
 return(
 <div>
-<h1>Lets get Started!</h1>
+<Header />
 
 {/* 
 UI for Adding new Expense */}
@@ -38,7 +42,8 @@ UI for Adding new Expense */}
 
 {/* Displaying the List of expenses */}
 <Expenses items={expenses} />
- 
+<Footer />
+
 </div>
  
 )

@@ -4,13 +4,13 @@ import {useState} from "react";
 
 const NewExpense=(props)=>{
 
-    const[EditingForm,setEditingForm]=useState(false);
 
+    //for open and close the editing form with the buttons "Add"& "Cancal"
+    const[EditingForm,setEditingForm]=useState(false);
 
     const EditForm=()=>{
         setEditingForm(true);
     }
-
     const CancelEdit=()=>{
         setEditingForm(false);
     }
