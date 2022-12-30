@@ -1,27 +1,19 @@
 import "./ExpenseDate.css";
-import React from 'react';
+import React from "react";
 
+function ExpenseDate(props) {
+  const month = props.expenseDate.toLocaleString("en-US", { month: "long" });
 
-function ExpenseDate(props){
+  const day = props.expenseDate.toLocaleString("en-US", { day: "2-digit" });
 
+  const year = props.expenseDate.getFullYear();
 
-const month =props.expenseDate.toLocaleString("en-US", { month: "long" });;
-
-const day=props.expenseDate.toLocaleString("en-US", { day: "2-digit" });;
-
-const year=props.expenseDate.getFullYear();
-
-
-    return(
-<div className="DateContainer">
-<h2 className="month">{month}</h2>  
- <h2 className="year">{year}</h2> 
- <h2 className="day">{day}</h2>  
-  
-  </div>
-    )
+  return (
+    <div className="DateContainer">
+      <h2 className="month">{month}</h2>
+      <h2 className="year">{year}</h2>
+      <h2 className="day">{day}</h2>
+    </div>
+  );
 }
 export default ExpenseDate;
-
-
-
