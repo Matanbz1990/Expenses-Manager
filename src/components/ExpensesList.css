@@ -1,9 +1,7 @@
-h3{
-    font-size: x-large;
-        text-align: center;
-        color:#f8dfff;
-        font-weight: bold;
-        padding-bottom: 40px;
-    
-    
+h3 {
+  font-size: x-large;
+  text-align: center;
+  color: #ffffff;
+  /* font-weight: bold; */
+  padding-bottom: 40px;
 }

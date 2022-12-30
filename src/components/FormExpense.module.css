@@ -10,26 +10,27 @@
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #e8f3d6;
   width: 20rem;
   max-width: 100%;
 }
-.new-expense__control label {
-  font-weight: bold;
+.newexpense__control label {
+  /* font-weight: bold; */
   margin-bottom: 0.5rem;
   display: block;
+  color: white;
 }
 
-.new-expense__control input {
+.newexpense__control input {
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #e8f3d6;
   width: 20rem;
   max-width: 100%;
 }
 
-.new-expense__action {
+.newexpense__action {
   width: 22rem;
   /* text-align: right; */
   display: flex;
@@ -37,5 +38,14 @@
   align-items: flex-end;
 }
 .messages {
-  color: #40005d;
+  color: #fafafa;
+}
+.newexpense__action button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(219, 209, 209);
+  color: white;
+
+  border-color: rgb(219, 209, 209);
+}
+.newexpense__action button:hover {
 }

@@ -1,20 +1,25 @@
 import ExpenseItem from "./ExpenseItem";
 import "./ExpensesList.css";
+import TotalYearExpenses from "./TotalYearExpenses";
 
 const ExpensesList = (props) => {
   const filteredYear = props.FilteredYear;
   const filteredArray = props.FilteredArrayOfExpensesForYear;
 
   // const DisplayingNoExpenses = () => {};
+  let noExpensesFound = false;
+
+  if (
+    filteredArray != null &&
+    filteredArray.length === 0 &&
+    filteredYear != "Choose a year"
+  ) {
+    noExpensesFound = true;
+  }
 
   return (
     <div>
-      {filteredArray != null &&
-        filteredArray.length === 0 &&
-        filteredYear != "Choose a year" && (
-          <h3>No expenses found this year!</h3>
-        )}
-      ;
+      {noExpensesFound && <h3>No expenses found this year!</h3>};
       {filteredArray.map((expense) => {
         return (
           <ExpenseItem
@@ -25,6 +30,12 @@ const ExpensesList = (props) => {
           />
         );
       })}
+      {!noExpensesFound && (
+        <TotalYearExpenses
+          year={filteredYear}
+          currentYearExpenses={filteredArray}
+        />
+      )}
     </div>
   );
 };

@@ -1,10 +1,10 @@
+import classes from "./Header.module.css";
 
-import "./Header.css";
-
-const Header=()=>
-{
-    return(<div className="hcontainer">
-        <h1> Expenses Manager</h1>
-    </div>)
-}
+const Header = () => {
+  return (
+    <div className={classes.hcontainer}>
+      <h1> Expenses Manager</h1>
+    </div>
+  );
+};
 export default Header;

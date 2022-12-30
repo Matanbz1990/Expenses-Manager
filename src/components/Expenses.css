@@ -1,17 +1,15 @@
-.Expenses{
-    background-color: rgb(39, 37, 37);
-    width: 45%;
+.Expenses {
+  background-color: #61876e;
+  width: 45%;
   margin: auto;
   border-radius: 12px;
   display: flex;
   flex-flow: column wrap;
   margin-top: 50px;
-    
-    
+  margin-bottom: 100px;
 }
 
 p {
-
   color: white;
   text-align: center;
   font-size: x-large;

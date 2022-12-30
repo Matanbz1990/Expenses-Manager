@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./FormExpense.css";
+import classes from "./FormExpense.module.css";
 
 const FormExpense = (props) => {
   const [enteredValue, setEnteredValue] = useState({
@@ -8,11 +8,21 @@ const FormExpense = (props) => {
     amount: "",
     date: "",
   });
+
   const [isPosted, setIsPosted] = useState(false);
-  const [postIsPressed, setPostIsPressed] = useState(false);
   const [stateIsValid, setStateIsValid] = useState(false);
 
   //handle the changes on inputs
+
+  useEffect(() => {
+    if (
+      enteredValue.title !== "" &&
+      enteredValue.date !== "" &&
+      enteredValue.amount !== ""
+    )
+      setStateIsValid(true);
+    else setStateIsValid(false);
+  }, [enteredValue]);
 
   const changeHandler = (event) => {
     const value = event.target.value;
@@ -25,21 +35,13 @@ const FormExpense = (props) => {
   //send the new expense(state) uplift
   const addNewExpense = (event) => {
     event.preventDefault();
-    setPostIsPressed(true);
 
-    if (
-      enteredValue.title === "" ||
-      enteredValue.date === "" ||
-      enteredValue.amount === ""
-    ) {
-      console.log("one is Empty");
-    } else {
-      setStateIsValid(true);
-    }
-    console.log(enteredValue, stateIsValid);
+    postExpanse(enteredValue);
+    setEnteredValue({ id: Math.random(), title: "", amount: "", date: "" });
   };
 
   const postExpanse = (enteredValue) => {
+    setIsPosted(true);
     fetch(
       "https://expanse-manager-8f511-default-rtdb.firebaseio.com/expanses.json",
       {
@@ -62,7 +64,7 @@ const FormExpense = (props) => {
               data[key].e.date = newDate;
               updatedExpenses.push(data[key]);
               props.updatedState(updatedExpenses);
-              setPostIsPressed(false);
+              setStateIsValid(false);
             }
           })
           .catch((error) => console.log(error.message));
@@ -72,13 +74,9 @@ const FormExpense = (props) => {
       });
   };
 
-  useEffect(() => {
-    if (stateIsValid) {
-      postExpanse(enteredValue);
-      setEnteredValue({ id: Math.random(), title: "", amount: "", date: "" });
-      setIsPosted(true);
-    }
-  }, [stateIsValid]);
+  // useEffect(() => {
+
+  // }, [stateIsValid]);
 
   const successAdded = () => {
     setTimeout(() => {
@@ -86,13 +84,13 @@ const FormExpense = (props) => {
     }, 2000);
 
     if (isPosted)
-      return <h1 className="messages">Expense added succssesfuly</h1>;
+      return <h1 className={classes.messages}>Expense added succssesfuly</h1>;
   };
 
   return (
     <form onSubmit={addNewExpense}>
-      <div className="FormContainer">
-        <div className="new-expense__control">
+      <div className={classes.FormContainer}>
+        <div className={classes.newexpense__control}>
           <label>Product</label>
           <input
             onChange={changeHandler}
@@ -101,7 +99,7 @@ const FormExpense = (props) => {
             value={enteredValue.title}
           />
         </div>
-        <div className="new-expense__control">
+        <div className={classes.newexpense__control}>
           <label>Price ($)</label>
           <input
             onChange={changeHandler}
@@ -112,7 +110,7 @@ const FormExpense = (props) => {
             value={enteredValue.amount}
           />
         </div>
-        <div className="new-expense__control">
+        <div className={classes.newexpense__control}>
           <label>Date</label>
           <input
             onChange={changeHandler}
@@ -124,13 +122,13 @@ const FormExpense = (props) => {
           />
         </div>
 
-        <div className="new-expense__action">
-          <button type="submit">Add Expense</button>
+        <div className={classes.newexpense__action}>
+          <button type="submit" disabled={!stateIsValid}>
+            Add Expense
+          </button>
           <button onClick={props.Cancel}>Cancel</button>
         </div>
-        {postIsPressed && !stateIsValid && (
-          <h1 className="messages">Please fill all the fields</h1>
-        )}
+
         {isPosted && successAdded()}
       </div>
     </form>

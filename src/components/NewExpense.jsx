@@ -1,5 +1,5 @@
 import FormExpense from "./FormExpense";
-import "./NewExpense.css";
+import classes from "./NewExpense.module.css";
 import { useState } from "react";
 
 const NewExpense = (props) => {
@@ -23,7 +23,7 @@ const NewExpense = (props) => {
   // };
 
   return (
-    <div className="new-expense">
+    <div className={classes.newexpense}>
       {!EditingForm && <button onClick={EditForm}>Add New Expense</button>}
       {EditingForm && (
         <FormExpense Cancel={CancelEdit} updatedState={props.updatedState} />

@@ -11,27 +11,26 @@ function Expenses(props) {
   const selectedExpensesYear = (year) => {
     setExpensesYear(year);
   };
+  {
+    console.log(expensesYear);
+  }
 
   //for getting array of expenses with the chosen year
 
   const filteredYearArrayExpanses = props.items.filter((expense) => {
     return expense.e.date.getFullYear().toString() === expensesYear;
-    // .slice(0, 4)
-    // .getFullYear().toString()
   });
 
   return (
     <div className="Expenses">
       <ExpensesFilter selectedYearData={selectedExpensesYear} />
 
-      {/* filteredYear=> array  expensesYear=>variable */}
-
-      {expensesYear != "" && (
+      {expensesYear !== "" && (
         <div>
           <ExpenseChart filteredExpenses={filteredYearArrayExpanses} />
           <ExpensesList
             FilteredArrayOfExpensesForYear={filteredYearArrayExpanses}
-            ExpensesYear={expensesYear}
+            FilteredYear={expensesYear}
           />
         </div>
       )}
