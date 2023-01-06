@@ -10,9 +10,9 @@ const ExpensesList = (props) => {
   let noExpensesFound = false;
 
   if (
-    filteredArray != null &&
+    filteredArray !== null &&
     filteredArray.length === 0 &&
-    filteredYear != "Choose a year"
+    filteredYear !== "Choose a year"
   ) {
     noExpensesFound = true;
   }

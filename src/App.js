@@ -24,7 +24,7 @@ function App() {
         setExpensesState(array);
       })
       .catch((error) => console.log(error.message));
-  }, []);
+  }, [array]);
 
   const updatedState = (updatedExpenses) => {
     setExpensesState(updatedExpenses);

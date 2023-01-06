@@ -34,7 +34,7 @@
   width: 22rem;
   /* text-align: right; */
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 .messages {
@@ -47,5 +47,5 @@
 
   border-color: rgb(219, 209, 209);
 }
-.newexpense__action button:hover {
-}
+/* .newexpense__action button:hover {
+} */

@@ -11,9 +11,8 @@ function Expenses(props) {
   const selectedExpensesYear = (year) => {
     setExpensesYear(year);
   };
-  {
-    console.log(expensesYear);
-  }
+
+  console.log(expensesYear);
 
   //for getting array of expenses with the chosen year
 

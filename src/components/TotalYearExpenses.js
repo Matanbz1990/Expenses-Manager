@@ -7,6 +7,7 @@ const TotalYearExpenses = (props) => {
   props.currentYearExpenses.map((expense) => {
     amount = +expense.e.amount;
     totalExpenses += amount;
+    return;
   });
   console.log(totalExpenses);
 
