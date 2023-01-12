@@ -12,8 +12,6 @@ function Expenses(props) {
     setExpensesYear(year);
   };
 
-  console.log(expensesYear);
-
   //for getting array of expenses with the chosen year
 
   const filteredYearArrayExpanses = props.items.filter((expense) => {

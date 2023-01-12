@@ -8,9 +8,8 @@ import { useState, useEffect } from "react";
 function App() {
   const [expensesState, setExpensesState] = useState([]);
 
-  const array = [];
-
   useEffect(() => {
+    const array = [];
     fetch(
       "https://expanse-manager-8f511-default-rtdb.firebaseio.com/expanses.json"
     )
@@ -24,7 +23,8 @@ function App() {
         setExpensesState(array);
       })
       .catch((error) => console.log(error.message));
-  }, [array]);
+    //eslint - disable - next - line;
+  }, []);
 
   const updatedState = (updatedExpenses) => {
     setExpensesState(updatedExpenses);
