@@ -39,6 +39,11 @@
 }
 .messages {
   color: #fafafa;
+  text-align: center;
+}
+.messages h1 {
+  color: #fafafa;
+  text-align: center;
 }
 .newexpense__action button:disabled {
   cursor: not-allowed;

@@ -5,20 +5,14 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  background-color: #61876e;
+  background-color: #3c6255;
   color: white;
   border-radius: 12px;
+  min-width: 10rem;
+  max-width: 15rem;
 }
 
 h2 {
   margin: 0;
   font-size: large;
-}
-
-.day {
-  font-size: xx-large;
-}
-
-.month {
-  font-size: x-large;
 }

@@ -23,23 +23,18 @@ function App() {
         setExpensesState(array);
       })
       .catch((error) => console.log(error.message));
-    //eslint - disable - next - line;
   }, []);
 
   const updatedState = (updatedExpenses) => {
     setExpensesState(updatedExpenses);
   };
 
-  // const fetchData = () => {};
-
-  // console.log(expenses);
   return (
     <div>
       <Header />
       {/* 
      UI for Adding new Expense */}
       <NewExpense updatedState={updatedState} />
-      {/* fetchData={fetchData} */}
       {/* Displaying the List of expenses */}
       <Expenses items={expensesState} />
       <Footer />

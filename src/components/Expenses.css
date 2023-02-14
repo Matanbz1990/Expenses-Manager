@@ -1,5 +1,5 @@
 .Expenses {
-  background-color: #61876e;
+  background-color: #3c6255;
   width: 45%;
   margin: auto;
   border-radius: 12px;
@@ -7,6 +7,7 @@
   flex-flow: column wrap;
   margin-top: 50px;
   margin-bottom: 100px;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
 p {

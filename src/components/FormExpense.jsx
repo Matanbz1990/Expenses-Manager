@@ -84,7 +84,11 @@ const FormExpense = (props) => {
     }, 2000);
 
     if (isPosted)
-      return <h1 className={classes.messages}>Expense added succssesfuly</h1>;
+      return (
+        <div className={classes.messages}>
+          <h1>Expense added succssesfuly</h1>
+        </div>
+      );
   };
 
   return (
@@ -116,7 +120,7 @@ const FormExpense = (props) => {
             onChange={changeHandler}
             type="date"
             min="2019-01-01"
-            max="2022-12-31"
+            max="2023-12-31"
             name="date"
             value={enteredValue.date}
           />

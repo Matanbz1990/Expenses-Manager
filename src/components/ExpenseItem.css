@@ -12,16 +12,6 @@
   box-shadow: 0 2px 8px rgba(253, 252, 252, 0.25);
 }
 
-.product {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-  flex-flow: column-reverse;
-  justify-content: flex-start;
-  flex: 1;
-}
-
 .product h2 {
   color: white;
   font-size: 1.5rem;
@@ -31,10 +21,9 @@
 }
 .amount {
   color: white;
-  background-color: #61876e;
+  background-color: #3c6255;
 
   font-size: 2rem;
-  /* font-weight: bold; */
   padding: 1rem;
   border-radius: 12px;
   border: 1px solid rgb(255, 254, 255);

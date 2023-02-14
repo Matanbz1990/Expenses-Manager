@@ -6,12 +6,12 @@
   width: 100%;
   height: 60px;
   position: fixed;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
 
 h1 {
   text-align: center;
   color: #ffffff;
-  /* font-weight: bold; */
   font-size: x-large;
   padding-bottom: 40px;
 }

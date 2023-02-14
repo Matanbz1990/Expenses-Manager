@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1rem;
 }
 
 .chart-bar__inner {
@@ -14,11 +15,12 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border: 1px white solid;
   justify-content: flex-end;
 }
 
 .chart-bar__fill {
-  background-color: #61876e;
+  background-color: #3c6255;
   width: 100%;
   transition: all 0.3s ease-out;
 }
